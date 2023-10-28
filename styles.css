@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body {
+    margin: 0;
+    padding: 0%;
+}
+
+.window {
+    height: 105vh;
+    background-color: #B6866A;
+
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.paddingtop {
+    padding-top: 15%;
+}
+
+.div_img {
+    padding-left: 10vh;
+}
+
+.texto {
+    color: white;
+    font-size: 24px;
+    width: 100%;
+}
+
+/*Fondos apartados*/
+.fondo-a {
+    margin-top: -20px;
+    padding: 50px;
+    background-color: #DBB18B;
+    color: white;
+}
+
+.fondo-b {
+    margin-top: -20px;
+    padding: 50px;
+    background-color: #E4B88B;
+    color: white;
+
+}
+
+/* Estilos para la navbar */
+.navbar {
+    background-color: transparent;
+    /* Add the blur effect 
+    filter: blur(8px);
+    -webkit-filter: blur(8px);*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: fixed; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
+}
+
+.navbar::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(10px); /* Aplica un desenfoque al fondo de la barra */
+    -webkit-backdrop-filter: blur(10px); /* Para navegadores Webkit (Safari) */
+    z-index: -1; /* Coloca el pseudoelemento detrás del contenido */
+}
+/* Estilos para los elementos de la barra de navegación */
+.navbar a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+}
+
+.navbar a:hover {
+    color: black;
+}
+
+/* Estilos para la tarjeta */
+.tarjeta {
+    width: 100%;
+    /* Utiliza el 100% del ancho disponible */
+    max-width: 600px;
+    /* Establece un ancho máximo para la tarjeta */
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    margin: 20px auto;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Estilos para el botón "Ver Detalles" */
+.boton-toggle {
+    background-color: rgba(15, 132, 241, 0.815);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+}
+
+/* Estilos para el contenido oculto */
+.contenido {
+    padding: 5px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 1.0s ease-in-out;
+}
+
+/* Estilos para el contenido cuando la tarjeta está desplegada */
+.tarjeta.active .contenido {
+    max-height: 1000px;
+}
+
+/* Media query tarjetas */
+@media (max-width: 768px) {
+    .tarjeta {
+        max-width: 100%;
+        /* Utiliza el 100% del ancho disponible en pantallas pequeñas */
+    }
+}
+
+/* Responsive navbar*/
+.navbar.responsive {
+    position: relative;
+}
+
+.navbar.responsive .icon {
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+
+.navbar.responsive a {
+    display: none;
+}
+
+.navbar.responsive a.icon {
+    float: right;
+    display: block;
+}
