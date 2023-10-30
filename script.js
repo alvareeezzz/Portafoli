@@ -17,3 +17,12 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+function toggleMenu() {
+    var menu = document.querySelector('.menu');
+    if (menu.style.display === 'none' || window.getComputedStyle(menu).display === 'none') {
+        menu.style.display = 'flex';
+    } else {
+        menu.style.display = 'none';
+    }
+}
+
